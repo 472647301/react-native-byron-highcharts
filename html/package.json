@@ -1,0 +1,26 @@
+{
+  "name": "byron-highcharts",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "description": "react-native-highcharts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/472647301/react-native-highcharts.git"
+  },
+  "keywords": [
+    "react-native-highcharts"
+  ],
+  "author": "Byron ZHU <472647301@qq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/472647301/react-native-highcharts/issues"
+  },
+  "homepage": "https://github.com/472647301/react-native-highcharts#readme",
+  "devDependencies": {
+    "typescript": "^3.5.3"
+  }
+}
