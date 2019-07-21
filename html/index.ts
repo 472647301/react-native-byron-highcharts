@@ -5,11 +5,12 @@ export type IOnMessage = {
   event: 'initDone' | 'updateDone'
 }
 
-export function sendMessageHtml(name: _event, params: HighCharts.Options) {
+export function sendMessageHtml(
+  name: _event,
+  params: HighCharts.Options,
+  debug?: boolean
+) {
   return `
-  window.sendMessageHtml(${JSON.stringify({
-    event: name,
-    data: params
-  })})
+  window.sendMessageHtml(${name}, ${JSON.stringify(params)}, ${debug})
   `
 }
