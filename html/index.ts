@@ -11,6 +11,10 @@ export function sendMessageHtml(
   debug?: boolean
 ) {
   return `
-  window.sendMessageHtml(${name}, ${JSON.stringify(params)}, ${debug})
+  window.sendMessageHtml(${JSON.stringify({
+    event: name,
+    option: params,
+    debug: debug
+  })})
   `
 }

@@ -49,22 +49,22 @@ class App extends Vue {
     this.postMessage(JSON.stringify({ event: 'updateDone' }))
   }
 
-  public receiveMessage(
-    event: _event,
-    option: HighCharts.Options,
+  public receiveMessage(data: {
+    event: _event
+    option: HighCharts.Options
     debug?: boolean
-  ) {
-    if (debug) {
+  }) {
+    if (data.debug) {
       const VConsole = require('vconsole')
       const vsonsole = new VConsole()
     }
-    console.info(` >> Receive message:`, event, option)
-    switch (event) {
+    console.info(` >> Receive message:`, data.event, data.option)
+    switch (data.event) {
       case 'initChart':
-        this.initChart(option)
+        this.initChart(data.option)
         break
       case 'updateChart':
-        this.updateChart(option)
+        this.updateChart(data.option)
         break
     }
   }
