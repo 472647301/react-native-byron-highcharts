@@ -1,29 +1,6 @@
 # react-native-byron-highcharts
 
-## Project setup
-```
-yarn install
-```
+基于highcharts的 react-native 图表
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [highcharts api](https://github.com/highcharts/highcharts)
+- [Example](https://github.com/472647301/react-native-inssues/blob/master/src/views/HighCharts.tsx)
