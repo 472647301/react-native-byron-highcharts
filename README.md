@@ -1,4 +1,4 @@
-# react-native-highcharts
+# react-native-byron-highcharts
 
 ## Project setup
 ```
