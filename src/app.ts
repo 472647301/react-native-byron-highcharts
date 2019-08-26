@@ -20,6 +20,7 @@ class App extends Vue {
 
   public initChart(option: HighCharts.Options) {
     this.option = lodash.merge(this.option, option)
+    HighCharts.setOptions({ global: { useUTC: false } })
     this.chartDom = HighCharts.chart('app', this.option)
     console.info(` >> Chart init:`, this.option)
     this.postMessage(JSON.stringify({ event: 'initDone' }))
