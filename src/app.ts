@@ -17,8 +17,12 @@ type _event = 'initChart' | 'updateChart'
 class App extends Vue {
   public chartDom?: HighCharts.Chart
   public option: HighCharts.Options = {}
+  public pricePrecision = 0
 
   public initChart(option: HighCharts.Options) {
+    if ((option as any).pricePrecision) {
+      this.pricePrecision = (option as any).pricePrecision
+    }
     this.option = lodash.merge(this.option, option)
     HighCharts.setOptions({ global: { useUTC: false } })
     this.chartDom = HighCharts.chart('app', this.option)
@@ -44,7 +48,17 @@ class App extends Vue {
     ) {
       this.chartDom.series[1].setData(option.series[1].data)
     }
-    this.option = lodash.merge(this.option, option)
+    const pricePrecision = this.pricePrecision
+    this.option = lodash.merge(this.option, option, {
+      xAxis: {
+        labels: {
+          formatter: function() {
+            const value: any = (this as any).value
+            return value ? Number(value).toFixed(pricePrecision) : value
+          }
+        }
+      }
+    })
     this.chartDom.update(this.option)
     console.info(` >> Chart update:`, this.option)
     this.postMessage(JSON.stringify({ event: 'updateDone' }))
